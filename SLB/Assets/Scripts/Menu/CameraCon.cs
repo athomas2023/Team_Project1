@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraCon : MonoBehaviour
 {
-    private GameObject Player;
+    public GameObject Player;
     public float xMin;
     public float xMax;
     public float yMin;
