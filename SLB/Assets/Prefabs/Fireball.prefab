@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802224160638091700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.59, y: 2.69, z: 0.06750463}
+  m_LocalPosition: {x: 0, y: 0, z: 0.06750463}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9150943, g: 0.45539576, b: 0.07338022, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1e0b343fc14f9e145ab6e5c9dd017617, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8695940525273552163}
   - component: {fileID: 2892996497397343195}
   - component: {fileID: 8033792684755950153}
+  - component: {fileID: 9041589102817099848}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -155,3 +156,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &9041589102817099848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8873923522479093518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93e359d3afad3242923fa22e0d306df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 8033792684755950153}
+  velocity: {x: 0, y: 0}
+  explosion: {fileID: 7159895467554012786, guid: b5132652cee64ba41bcbc38ffc00d734, type: 3}
