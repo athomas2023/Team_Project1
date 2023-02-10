@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 6968377096044109738}
   - component: {fileID: 6968377096044109739}
   - component: {fileID: 7410918262953508534}
+  - component: {fileID: 3788091114820204209}
   - component: {fileID: 6968377096044109740}
   - component: {fileID: 6968377096044109741}
   - component: {fileID: 8890228775720879891}
@@ -162,6 +163,23 @@ MonoBehaviour:
   moveSpeed: 10
   facingRight: 0
   jumpForce: 5
+  moveX: 0
+--- !u!114 &3788091114820204209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6968377096044109736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e3c6f4a59f7c944be490bb04cc34bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
+  velocity: {x: 0, y: 0}
+  offset: {x: 1.4, y: 0.1}
+  cooldown: 1
   moveX: 0
 --- !u!61 &6968377096044109740
 BoxCollider2D:
