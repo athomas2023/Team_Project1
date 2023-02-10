@@ -1,0 +1,1 @@
+Delete The Default Main Camera first then add the Prefab main camera and set the transform to Position 0,0,-10
