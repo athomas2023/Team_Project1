@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8398261010905580310}
   - component: {fileID: 5017614411939000717}
   - component: {fileID: 3707284534489521199}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bloc
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,16 +98,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0044237375}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9142857, y: 0.9142857}
+    oldSize: {x: 0.9846154, y: 0.9846154}
     newSize: {x: 0.9142857, y: 0.9142857}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9142857, y: 0.9142857}
+  m_Size: {x: 0.9850652, y: 0.9703196}
   m_EdgeRadius: 0

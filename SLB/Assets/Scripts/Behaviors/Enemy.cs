@@ -19,5 +19,46 @@ public class Enemy : MonoBehaviour
         {
             direction = -direction;
         }
+
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            direction = -direction;
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Player player = collision.gameObject.GetComponent<Player>();
+
+          
+            if (collision.transform.DotTest(transform, Vector2.down)) {
+                Flatten();
+            } 
+        }
     }
+
+   
+
+     
+    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Shell")) {
+            Hit();
+        }
+    }
+
+    private void Flatten()
+    {
+        
+        Destroy(gameObject);
+    }
+
+    private void Hit()
+    {
+        
+        Destroy(gameObject);
+    }
+
+
 }

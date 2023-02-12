@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -9,24 +10,60 @@ public class Player : MonoBehaviour
     public float jumpForce = 5.0f;
     public float moveX;
     
+    public GameObject Game_Over_canvas;
+    public GameObject World_1_1_canvas;
+    public GameObject World_1_2_canvas;
+    public GameObject win_game_canvas;
+
+    public float timeInvincible = 2.0f;
+    bool isInvincible;
+    float invincibleTimer;
+
+    public int maxHealth = 2;
+    public int health { get { return currentHealth; } }
+    int currentHealth;
+
+
+    Animator anime;
+    
     Rigidbody2D rb;
+
+    Vector2 Scale;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anime = GetComponent<Animator>();
+
+         currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
         PlayerMove();
-
+            anime.SetFloat("walking", Mathf.Abs(moveX));
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector2.up * jumpForce,ForceMode2D.Impulse);
+            anime.SetBool("On_Ground", false);
         }
+
+          if (isInvincible)
+        {
+            invincibleTimer -= Time.deltaTime;
+            if (invincibleTimer < 0)
+                isInvincible = false;
+        }
+
+        if ( currentHealth == 0)
+        {
+            Game_Over_canvas.SetActive(true);
+        }
+         
+
     }
     void PlayerMove()
     {
@@ -76,6 +113,10 @@ public class Player : MonoBehaviour
         }
 
         if(collision.gameObject.CompareTag("PowerBlock"))
+        {
+            anime.SetBool("On_Ground", true);
+        
+        }
 
     
 

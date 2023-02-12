@@ -1,63 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2777804065037752047
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2713849630227438661}
-  - component: {fileID: 7833866135843805609}
-  m_Layer: 0
-  m_Name: Player_Attack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2713849630227438661
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2777804065037752047}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.302, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6968377096044109738}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &7833866135843805609
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2777804065037752047}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.010294735, y: -0.3740425}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.70488393, y: 0.25191498}
-  m_EdgeRadius: 0
 --- !u!1 &6968377096044109736
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,11 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6968377096044109738}
   - component: {fileID: 6968377096044109739}
+  - component: {fileID: 387793683554076778}
   - component: {fileID: 7410918262953508534}
   - component: {fileID: 3788091114820204209}
   - component: {fileID: 6968377096044109741}
   - component: {fileID: 8890228775720879891}
   - component: {fileID: 6430951722451271053}
+  - component: {fileID: 4603980660508175837}
   m_Layer: 6
   m_Name: Player_Obj
   m_TagString: Player
@@ -91,8 +35,7 @@ Transform:
   m_LocalPosition: {x: -1.46, y: -2.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2713849630227438661}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -148,6 +91,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &387793683554076778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6968377096044109736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24c4bb9b651810409e66cbae6af8822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRemaining: 200
+  timerOn: 0
 --- !u!114 &7410918262953508534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +121,12 @@ MonoBehaviour:
   facingRight: 0
   jumpForce: 5
   moveX: 0
+  Game_Over_canvas: {fileID: 0}
+  World_1_1_canvas: {fileID: 0}
+  World_1_2_canvas: {fileID: 0}
+  win_game_canvas: {fileID: 0}
+  timeInvincible: 2
+  maxHealth: 2
 --- !u!114 &3788091114820204209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +198,32 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.8, y: 1.6}
+  m_Offset: {x: 0, y: -0.0119200945}
+  m_Size: {x: 0.8, y: 1.5284789}
   m_Direction: 0
+--- !u!61 &4603980660508175837
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6968377096044109736}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.009536117, y: 0.6818336}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.6, y: 1.6}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.80850095, y: 0.23633265}
+  m_EdgeRadius: 0
