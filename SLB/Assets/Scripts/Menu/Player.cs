@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public bool facingRight = false;
     public float jumpForce = 5.0f;
     public float moveX;
+    public Score sc;
     
     public GameObject Game_Over_canvas;
     public GameObject World_1_1_canvas;
@@ -21,8 +22,8 @@ public class Player : MonoBehaviour
 
     public int maxHealth = 2;
     public int health { get { return currentHealth; } }
-    int currentHealth;
-
+   public int currentHealth;
+   bool powered_uped = false;
 
     Animator anime;
     
@@ -30,14 +31,17 @@ public class Player : MonoBehaviour
 
     Vector2 Scale;
 
+    Shoot shoot;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anime = GetComponent<Animator>();
+        shoot = GetComponent<Shoot>();
 
-         currentHealth = maxHealth;
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -123,17 +127,32 @@ public class Player : MonoBehaviour
         
     }
 
+   
+
 
     public void ChangeHealth(int amount)
     {
         if (amount < 0)
         {
+           if(powered_uped == false && currentHealth == 1 )
+           {
+             Scale = transform.localScale;
+
+              Scale.y -= 0.5f;
+
+              transform.localScale = Scale;
+              
+           }
+
+           if(powered_uped == true && currentHealth == 2)
+           {
+              
+                shoot.turn_off();
+                maxHealth = 2;
+
+           }
+
            
-            Scale = transform.localScale;
-
-             Scale.y -= 0.5f;
-
-             transform.localScale = Scale;
              
             if (isInvincible)
                 return;
@@ -147,6 +166,29 @@ public class Player : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
 
         
+    }
+
+    public void turn_on()
+    {
+        if (currentHealth ==1 )
+        {
+        Scale = transform.localScale;
+
+        Scale.y += 0.5f;
+
+        transform.localScale = Scale;
+        }      
+
+        powered_uped = true;
+        currentHealth = 3;
+        maxHealth = 3;
+        shoot.Power_Up();
+    }
+
+
+    public void fallDetection1()
+    {
+        Game_Over_canvas.SetActive(true);
     }
 
 

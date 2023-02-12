@@ -349,6 +349,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Power_block
       objectReference: {fileID: 0}
+    - target: {fileID: 8060200781677672637, guid: 5ab39935f1b2ac1469b1d854632075fd, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 8668318216719616105, guid: b0082e2aa5c9a9d4ebe472f372e08ab1, type: 3}
+    - target: {fileID: 8060200781677672637, guid: 5ab39935f1b2ac1469b1d854632075fd, type: 3}
+      propertyPath: offset.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ab39935f1b2ac1469b1d854632075fd, type: 3}
 --- !u!1001 &310736471
@@ -994,6 +1002,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Power_block (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8060200781677672637, guid: 5ab39935f1b2ac1469b1d854632075fd, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3973072711499007162, guid: c08793d6f9ca72c4faa9738adf1dc928, type: 3}
+    - target: {fileID: 8060200781677672637, guid: 5ab39935f1b2ac1469b1d854632075fd, type: 3}
+      propertyPath: offset.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ab39935f1b2ac1469b1d854632075fd, type: 3}
 --- !u!1001 &792808316
@@ -1164,6 +1180,14 @@ PrefabInstance:
     - target: {fileID: 3882964673970286927, guid: 5ab39935f1b2ac1469b1d854632075fd, type: 3}
       propertyPath: m_Name
       value: Power_block (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060200781677672637, guid: 5ab39935f1b2ac1469b1d854632075fd, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3973072711499007162, guid: c08793d6f9ca72c4faa9738adf1dc928, type: 3}
+    - target: {fileID: 8060200781677672637, guid: 5ab39935f1b2ac1469b1d854632075fd, type: 3}
+      propertyPath: offset.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ab39935f1b2ac1469b1d854632075fd, type: 3}
@@ -13673,7 +13697,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1024662485}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 009624756eb29014cb52aeca3dd27b89, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -13978,6 +14002,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df0b854e80f8c1b43911e75f7ee62026, type: 3}
+--- !u!114 &1397899091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1154373660855986771, guid: 90390d1c5c0717d498c145a500b7e11d, type: 3}
+  m_PrefabInstance: {fileID: 1639929390}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1440629398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14402,6 +14437,14 @@ PrefabInstance:
     - target: {fileID: 3882964673970286927, guid: 5ab39935f1b2ac1469b1d854632075fd, type: 3}
       propertyPath: m_Name
       value: Power_block (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060200781677672637, guid: 5ab39935f1b2ac1469b1d854632075fd, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3973072711499007162, guid: c08793d6f9ca72c4faa9738adf1dc928, type: 3}
+    - target: {fileID: 8060200781677672637, guid: 5ab39935f1b2ac1469b1d854632075fd, type: 3}
+      propertyPath: offset.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ab39935f1b2ac1469b1d854632075fd, type: 3}
@@ -15080,6 +15123,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 387793683554076778, guid: 6ca60e5f22fba9f49b604dd109519497, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 1397899091}
     - target: {fileID: 2293691482611038906, guid: 6ca60e5f22fba9f49b604dd109519497, type: 3}
       propertyPath: m_IsTrigger
       value: 1

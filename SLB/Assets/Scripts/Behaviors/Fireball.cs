@@ -7,11 +7,14 @@ public class Fireball : MonoBehaviour
     public Rigidbody2D rb;
     public Vector2 velocity;
     public GameObject explosion;
+    public GameObject scoreManager;
     // Start is called before the first frame update
     void Start()
     {
         Destroy (this.gameObject, 10);
         rb = GetComponent<Rigidbody2D>();
+
+        Score score = GetComponent<Score>();
         velocity = rb.velocity;
         
     }
@@ -34,6 +37,7 @@ public class Fireball : MonoBehaviour
 
         if(col.collider.tag == "Enemy")
         {
+            
             Destroy (col.gameObject);
             explode();
         }

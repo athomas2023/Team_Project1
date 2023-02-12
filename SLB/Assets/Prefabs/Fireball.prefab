@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7872414595704402223}
   - component: {fileID: 5981511916640613062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2892996497397343195}
   - component: {fileID: 8033792684755950153}
   - component: {fileID: 9041589102817099848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,9 +132,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.011976719, y: -0.037428856}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.17811155
 --- !u!50 &8033792684755950153
 Rigidbody2D:
   serializedVersion: 4
@@ -169,5 +169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8033792684755950153}
-  velocity: {x: 0, y: 0}
+  velocity: {x: 5, y: -30}
   explosion: {fileID: 7159895467554012786, guid: b5132652cee64ba41bcbc38ffc00d734, type: 3}
+  scoreManager: {fileID: 6968377096044109736, guid: 6ca60e5f22fba9f49b604dd109519497, type: 3}

@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
         {
             direction = -direction;
         }
+        
 
         if(collision.gameObject.CompareTag("Enemy"))
         {
@@ -30,9 +31,14 @@ public class Enemy : MonoBehaviour
             Player player = collision.gameObject.GetComponent<Player>();
 
           
-            if (collision.transform.DotTest(transform, Vector2.down)) {
+            if (collision.transform.DotTest(transform, Vector2.down)) 
+            {
                 Flatten();
             } 
+            else 
+            {
+                player.ChangeHealth(-1);
+            }
         }
     }
 
