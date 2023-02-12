@@ -23,7 +23,10 @@ public class Player : MonoBehaviour
     public int maxHealth = 2;
     public int health { get { return currentHealth; } }
    public int currentHealth;
-   bool powered_uped = false;
+  public bool powered_uped = false;
+
+
+    public bool temp_ack = false;
 
     Animator anime;
     
@@ -33,6 +36,9 @@ public class Player : MonoBehaviour
 
     Shoot shoot;
 
+     AudioSource audioSource;
+      public AudioClip throwSound;
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +46,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anime = GetComponent<Animator>();
         shoot = GetComponent<Shoot>();
+
+        audioSource = GetComponent<AudioSource>();
 
         currentHealth = maxHealth;
     }
@@ -53,6 +61,7 @@ public class Player : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce,ForceMode2D.Impulse);
             anime.SetBool("On_Ground", false);
+            PlaySound(throwSound);
         }
 
           if (isInvincible)
@@ -66,6 +75,23 @@ public class Player : MonoBehaviour
         {
             Game_Over_canvas.SetActive(true);
         }
+
+        if (currentHealth == 2)
+        {
+            maxHealth = 2;
+            powered_uped = false;
+        }
+
+
+        if (temp_ack == true)
+        {
+            attactk();
+            
+            temp_ack = false;
+        }
+
+
+
          
 
     }
@@ -103,7 +129,7 @@ public class Player : MonoBehaviour
         if(collision.gameObject.CompareTag("Enemy"))
         {
           
-         ChangeHealth(-1);
+            attactk();
            
         }
 
@@ -134,7 +160,7 @@ public class Player : MonoBehaviour
     {
         if (amount < 0)
         {
-           if(powered_uped == false && currentHealth == 1 )
+           if(powered_uped == false  )
            {
              Scale = transform.localScale;
 
@@ -149,6 +175,7 @@ public class Player : MonoBehaviour
               
                 shoot.turn_off();
                 maxHealth = 2;
+                powered_uped = false;
 
            }
 
@@ -191,5 +218,22 @@ public class Player : MonoBehaviour
         Game_Over_canvas.SetActive(true);
     }
 
+    public void fallDetection2()
+    {
+        win_game_canvas.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+
+    public void attactk()
+    {
+        ChangeHealth(-1);
+    }
+
+
+     public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+    }
 
 }
