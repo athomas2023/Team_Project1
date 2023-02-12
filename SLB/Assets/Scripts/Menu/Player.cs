@@ -55,5 +55,58 @@ public class Player : MonoBehaviour
         transform.localScale = localScale;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+          
+         ChangeHealth(-1);
+           
+        }
+
+        
+
+        if(collision.gameObject.CompareTag("Ground"))
+        {
+          
+          anime.SetBool("On_Ground", true);
+           
+        }
+
+        if(collision.gameObject.CompareTag("PowerBlock"))
+
+    
+
+        
+    }
+
+
+    public void ChangeHealth(int amount)
+    {
+        if (amount < 0)
+        {
+           
+            Scale = transform.localScale;
+
+             Scale.y -= 0.5f;
+
+             transform.localScale = Scale;
+             
+            if (isInvincible)
+                return;
+
+            isInvincible = true;
+            invincibleTimer = timeInvincible;
+
+            
+        }
+
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+
+        
+    }
+
 
 }
